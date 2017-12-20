@@ -1,0 +1,80 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.u{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.u li{
+    float: left;
+    display: block;
+    color: #f18989;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+.u li a{
+    
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.u li a:hover{
+    background-color: #111111
+}
+
+.ae{
+    float: right;
+}
+
+.tb{
+    background: black;
+    color: blue;
+}
+.logout{
+    position: absolute;
+    right: 10%;
+}
+.det{
+    background: black;
+    color: blue;
+    height: 75%;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+}
+
+.empgrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3em;
+    h4{
+        color: blueviolet;
+    }
+}
+
+.row1{
+    background:black;
+    overflow: auto;
+    position: absolute;
+    padding: 16px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    .col-md-6{
+        label {
+            color: white;
+        }
+    }
+}
+

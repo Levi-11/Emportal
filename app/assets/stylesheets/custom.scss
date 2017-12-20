@@ -1,0 +1,85 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
+body {
+    padding-top: 60px;
+  }
+  
+  section {
+    overflow: auto;
+  }
+
+  footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+    position: absolute;
+    right: 5%;  
+    bottom: 5%;
+
+  }
+  
+  footer a {
+    color: #555;
+  }
+  
+  footer a:hover {
+    color: #222;
+  }
+  
+  footer small {
+    float: right;
+  }
+  
+  footer ul {
+    float: right;
+    list-style: none;
+  }
+  
+  footer ul li {
+    float: right;
+    margin-left: 15px;
+  }
+
+  .row{
+    background-color: black;
+    position: absolute;
+    padding: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 280px;
+  }
+
+  .label{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+  }
+
+  .faw{
+    color: black;
+    position: absolute;
+    font-size: 5rem;
+    left: 50%;
+    transform: translate(-50%,0); 
+  }
+
+  .gravatar {
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .gravatar_edit {
+    margin-top: 15px;
+  }
+  
+  .signup{
+    color: black;
+    background: white;
+
+  }

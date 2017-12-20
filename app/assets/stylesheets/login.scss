@@ -1,0 +1,84 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.link{
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+    a:hover{
+        background-color: #e95656;
+    }
+    
+    a {
+        color: #000000;
+        padding: 16px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+        text-decoration: none;
+    }
+}
+.h1{
+    text-align: center;
+    color: indigo;
+    size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
+}
+
+.welcome{
+    text-align: center;
+    color: crimson;
+ }
+// body{
+//     background-image: url("EE1.jpg");
+//     background-size: cover;
+    
+// }
+.home{
+    
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.aform{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #e956569f;
+   padding: 3rem;
+}
+
+
+
+.ad{
+    left: 50%;
+    position: absolute;
+    padding-top: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.sub{
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 150%;
+    color: white;
+    background-color: blue;
+    border: none;
+    width: 10rem;
+    height: 2rem;
+}
+
+label{
+    color: rgb(0, 0, 0)
+}
+
+.chk{
+    color: white;
+}
+

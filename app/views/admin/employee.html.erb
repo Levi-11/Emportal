@@ -1,0 +1,59 @@
+<% if logged_in? %>
+<ul class = "u">
+<li>Employee Portal Admin</li>
+<li><%= link_to "Dashboard",admin_dashboard_url  %></li>
+<li><%= link_to "Employee",admin_employee_url  %></li>
+<li><%= link_to "Projects",admin_project_url  %></li>
+<li class = "logout"><%= link_to "Log out", logout_path, method: :delete %></li>
+</ul>
+<% emparr = Employee.all %>
+
+<div class = "container" >
+
+        <table class="table tb table-dark table-bordered table-hover">
+
+            <tr>
+
+                <th>Name</th>
+
+                <th>Email</th>
+
+                <th>Phone</th>
+
+                <th>Active</th>
+
+                <th> </th>
+
+                <th> </th>
+
+            </tr>
+
+            <% emparr.each do |employee| %>
+
+            <tr>
+
+                <td><%= link_to employee.name, admin_employee_details_url(:id => employee.id), method: :post %></td>
+
+                <td><%= employee.email%></td>
+
+                <td><%= employee.phone%></td>
+
+                <td><%= employee.active%></td>
+
+                <td>Edit</td>
+
+                <td>Delete</td>
+
+            </tr>
+
+            <% end %>
+        </table>
+        <%= link_to "Add Employee", admin_add_employee_url, class: "btn ae btn-lg btn-success" %>
+
+</div>
+
+
+
+<% else %>
+<%= link_to "Wrong Signup, click here to go to Home", root_url %>
+<% end %>
