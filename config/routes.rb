@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get 'login/employee'
   post '/login/employee', to: 'login#empcreate'
+  delete '/emplogout', to: 'login#empdestroy'
 
   root 'login#home'
 

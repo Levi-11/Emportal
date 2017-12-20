@@ -2,6 +2,7 @@ module LoginHelper
     def log_in(user)
         session[:username] = user.id
     end
+   
 
     def remember(user)
         user.remember
@@ -9,10 +10,10 @@ module LoginHelper
         cookies.permanent[:remember_token] = user.remember_token
       end
 
-      def empremember(user)
-        user.remember
-        cookies.permanent.signed[:username] = user.id
-        cookies.permanent[:remember_token] = user.remember_token
+      def empremember(employee)
+        employee.remember
+        cookies.permanent.signed[:emp_id] = employee.id
+        cookies.permanent[:remember_token] = employee.remember_token
       end
 
     def current_user
@@ -48,7 +49,7 @@ module LoginHelper
       end
 
       def empforget(user)
-        user.empforget
+        user.forget
         cookies.delete(:username)
         cookies.delete(:remember_token)
       end
@@ -63,5 +64,10 @@ module LoginHelper
         forget(current_user)
         session.delete(:username)
         @current_user = nil
+    end
+    def emplog_out
+      empforget(current_user)
+      session.delete(:username)
+      @current_user = nil
     end
 end

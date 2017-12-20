@@ -3,8 +3,9 @@
 <li>Dashboard</li>
 <li><a href = "#dashboard">Dashboard</a></li>
 <li><a href = "#details">Details</a></li>
-<li class = "logout"><%= link_to "Log out", logout_path, method: :delete %></li>
+<li class = "logout"><%= link_to "Log out", emplogout_path, method: :delete %></li>
 </ul>
+Welcome <%= @employee.name %>
 <% else %>
 <%= link_to "Wrong Signup, click here to go to Home", root_url %>
 <% end %>
