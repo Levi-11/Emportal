@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   post 'admin/employee_details'
 
   get 'admin/project'
+  get 'admin/edit_employee'
+  patch 'admin/edit_employee', to: 'admin#update'
+  delete '/admin/delete', to: 'admin#destroy'
 
   get 'login/admin'
   post '/login/admin', to: 'login#create'

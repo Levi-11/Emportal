@@ -14,7 +14,7 @@ class Employee < ApplicationRecord
     validates :date_of_join, presence: true
     validates :address, presence: true
     has_secure_password
-    validates :password, presence: true, length: {minimum: 5, maximum: 15}
+    validates :password, presence: true, length: {minimum: 5, maximum: 15}, allow_nil: true
     validates :active, presence: true
 
     def Employee.digest(string)

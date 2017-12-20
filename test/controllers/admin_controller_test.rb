@@ -25,4 +25,9 @@ class AdminControllerTest < ActionDispatch::IntegrationTest
     get admin_project_url
     assert_response :success
   end
+
+  test "should get edit_employee" do
+    get admin_edit_employee_url
+    assert_response :success
+  end
 end

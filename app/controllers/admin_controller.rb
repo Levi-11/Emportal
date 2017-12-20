@@ -18,7 +18,12 @@ class AdminController < ApplicationController
 
   def employee_details
     redirect_to root_url unless logged_in?
-    @empdet = Employee.find(params[:id])
+    @employee = Employee.find(params[:id])
+  end
+
+  def edit_employee
+    redirect_to root_url unless logged_in?
+    @employee = Employee.find(params[:id])
   end
 
   def create
@@ -30,8 +35,32 @@ class AdminController < ApplicationController
     end
   end
 
+  def update
+    @employee = Employee.find(params[:id])   
+    if @employee.update_attributes(employee_updates)
+      redirect_to admin_employee_url
+
+      # Handle a successful update.
+    else
+      render admin_edit_employee_url
+    end
+  end
+
+  def destroy
+    Employee.find(params[:id]).destroy
+    redirect_to admin_employee_url
+  end
+
+  private
+
   def employee_params
     params.require(:employee).permit(:name, :email, :password,
                                  :password_confirmation, :gender, :designation, :date_of_join, :phone, :date_of_birth, :address, :active, :username)
+  end
+
+  private
+
+  def employee_updates
+    params.require(:employee).permit(:name, :designation, :phone, :address, :active)
   end
 end

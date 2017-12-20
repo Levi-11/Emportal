@@ -40,9 +40,9 @@
 
                 <td><%= employee.active%></td>
 
-                <td>Edit</td>
+                <td><%= link_to "Edit", admin_edit_employee_url(:id => employee.id) %></td>
 
-                <td>Delete</td>
+                <td><%= link_to "Delete", admin_delete_url(:id => employee.id), method: :delete, data: { confirm: "Do you want to Delete?"} %></td>
 
             </tr>
 

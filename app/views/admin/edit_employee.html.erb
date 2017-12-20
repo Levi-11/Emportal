@@ -1,3 +1,4 @@
+<% provide(:title, "Edit user") %>
 <ul class = "u">
 <li>Employee Portal Admin</li>
 <li><%= link_to "Dashboard",admin_dashboard_url  %></li>
@@ -5,23 +6,14 @@
 <li><%= link_to "Projects",admin_project_url  %></li>
 <li class = "logout"><%= link_to "Log out", logout_path, method: :delete %></li>
 </ul>
-<div class = "signup">
-<h1 class ="text-center">Sign up</h1>
+<div class = "Edit Page">
+<h1 class ="text-center">Edit</h1>
 
 <div class="row1">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@employee, url: admin_add_employee_path) do |f| %>
+    <%= form_for(@employee, url: admin_edit_employee_path(:id=>@employee.id), method: :patch) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-
-       <%= f.label :username %>
-      <%= f.email_field :username %>
-
-      <br><%= f.label :gender %>
-      <br><%= f.select :gender, options_for_select([["Male"], ["Female"], ["Other"]]) %>
 
       <br><%= f.label :designation %>
       <%= f.text_field :designation %>
@@ -29,25 +21,13 @@
       <%= f.label :phone %>
       <%= f.text_field :phone %>
 
-      <%= f.label :date_of_join %>
-      <%= f.date_field :date_of_join %>
-
       <br><%= f.label :address %>
       <%= f.text_area :address, rows: "5" %>
 
       <%= f.label :active %>
       <%= f.check_box :active %>
 
-      <br><%= f.label :date_of_birth %>
-      <%= f.date_field :date_of_birth %>
-
-      <br><%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <br><%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-
-      <br><br><%= f.submit "Create my account", class: "btn btn-primary" %>
+      <br><br><%= f.submit "Edit", class: "btn btn-primary" %>
       <br><br><%= link_to "Cancel", admin_employee_url, class: "btn btn-lg btn-primary" %>
     <% end %>
   </div>
