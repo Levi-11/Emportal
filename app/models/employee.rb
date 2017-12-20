@@ -15,4 +15,30 @@ class Employee < ApplicationRecord
     validates :password, presence: true, length: {minimum: 5, maximum: 15}
     validates :active, presence: true
 
+    def Employee.digest(string)
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                      BCrypt::Engine.cost
+        BCrypt::Password.create(string, cost: cost)
+    end
+
+    # def Employee.new_token
+    #     SecureRandom.urlsafe_base64
+    # end
+
+  
+    # def empremember
+    #     self.remember_token = Employee.new_token
+    #     update_attribute(:remember_digest, Employee.digest(remember_token))
+    # end
+
+    # def authenticated?(remember_token)
+    #     return false if remember_digest.nil?
+    #     BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    # end
+
+
+    # def empforget
+    #     update_attribute(:remember_digest, nil)
+    # end
+
 end

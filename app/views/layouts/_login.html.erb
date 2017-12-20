@@ -1,9 +1,6 @@
 <% if yield(:user) == "admin" %>
 <i class="fa fa-users faw" aria-hidden="true"></i>
 <h1 class = "ad">Welcome to <%= yield(:user) %></h1>
-<% elsif yield(:user) == "employee" %>
-<i class="fa fa-user faw" aria-hidden="true"></i>
-<h1 class = "ad">Welcome to <%= yield(:user) %></h1>
 <% end %>
 <div class="row">
 

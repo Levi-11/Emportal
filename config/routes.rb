@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'login#destroy'
 
   get 'login/employee'
+  post '/login/employee', to: 'login#empcreate'
 
   root 'login#home'
 
