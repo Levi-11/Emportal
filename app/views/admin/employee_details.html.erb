@@ -1,4 +1,4 @@
-<% provide(:title, @empdet.name)%>
+<% provide(:title, @employee.name)%>
 <ul class = "u">
 <li>Employee Portal Admin</li>
 <li><%= link_to "Dashboard",admin_dashboard_url  %></li>
@@ -8,18 +8,18 @@
 </ul>
 
 <div class="container det">
-<%= gravatar_for @empdet %>
-<h1 class = "text-center"><%= @empdet.name %> </h1>
+<%= gravatar_for @employee %>
+<h1 class = "text-center"><%= @employee.name %> </h1>
 <div class = "empgrid">
 <div><h4 class = "text-right">Employee ID</h4></div>
-<div><h4 class = "text-left">RP<%= @empdet.id %></h4></div>
+<div><h4 class = "text-left">RP<%= @employee.id %></h4></div>
 <div><h4 class = "text-right">Email</h4></div>
-<div><h4 class = "text-left"><%= @empdet.email %></h4></div>
+<div><h4 class = "text-left"><%= @employee.email %></h4></div>
 <div><h4 class = "text-right">Designation</h4></div>
-<div><h4 class = "text-left"><%= @empdet.designation %></h4></div>
+<div><h4 class = "text-left"><%= @employee.designation %></h4></div>
 <div><h4 class = "text-right">Phone Number</h4></div>
-<div><h4 class = "text-left"><%= @empdet.phone %></h4></div>
+<div><h4 class = "text-left"><%= @employee.phone %></h4></div>
 <div><h4 class = "text-right">Address</h4></div>
-<div><h4 class = "text-left"><%= @empdet.address.split(', ').join("<br>").html_safe %></h4></div>
+<div><h4 class = "text-left"><%= @employee.address.split(', ').join("<br>").html_safe %></h4></div>
 </div>
 </div>

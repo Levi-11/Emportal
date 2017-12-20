@@ -5,7 +5,22 @@
 <li><a href = "#details">Details</a></li>
 <li class = "logout"><%= link_to "Log out", emplogout_path, method: :delete %></li>
 </ul>
-Welcome <%= @employee.name %>
+<div class="container det">
+<%= gravatar_for @employee %>
+<h1 class = "text-center"><%= @employee.name %> </h1>
+<div class = "empgrid">
+<div><h4 class = "text-right">Employee ID</h4></div>
+<div><h4 class = "text-left">RP<%= @employee.id %></h4></div>
+<div><h4 class = "text-right">Email</h4></div>
+<div><h4 class = "text-left"><%= @employee.email %></h4></div>
+<div><h4 class = "text-right">Designation</h4></div>
+<div><h4 class = "text-left"><%= @employee.designation %></h4></div>
+<div><h4 class = "text-right">Phone Number</h4></div>
+<div><h4 class = "text-left"><%= @employee.phone %></h4></div>
+<div><h4 class = "text-right">Address</h4></div>
+<div><h4 class = "text-left"><%= @employee.address.split(', ').join("<br>").html_safe %></h4></div>
+</div>
+</div>
 <% else %>
 <%= link_to "Wrong Signup, click here to go to Home", root_url %>
 <% end %>
