@@ -15,10 +15,10 @@
       <%= f.text_field :name %>
 
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, id: "mail" %>
 
        <%= f.label :username %>
-      <%= f.email_field :username %>
+      <%= f.email_field :username, id: "uname" %>
 
       <br><%= f.label :gender %>
       <br><%= f.select :gender, options_for_select([["Male"], ["Female"], ["Other"]]) %>

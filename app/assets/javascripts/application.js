@@ -13,5 +13,14 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-
+//= require jquery/dist/jquery.min.js
 //= require bootstrap
+
+$(document).ready(function() {
+    
+    $('#mail').blur(function() {
+       
+        $('#uname').val($('#mail').val());
+    });
+    
+});
