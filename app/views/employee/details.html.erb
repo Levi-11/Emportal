@@ -1,8 +1,111 @@
-<h1>Employee#details</h1>
-<p>Find me in app/views/employee/details.html.erb</p>
+
 <ul class = "u">
 <li>Dashboard</li>
-<li><a href = "#dashboard">Dashboard</a></li>
-<li><a href = "#details">Details</a></li>
+<li><%= link_to "Details",employee_dashboard_url  %></li>
+<li><%= link_to "Update",employee_details_url  %></li>
 <li class = "logout"><%= link_to "Log out", emplogout_path, method: :delete %></li>
 </ul>
+
+<div class="ide signup-div">
+        <div class = "Edit Page">
+                <h1 class ="text-center">Edit</h1>
+                
+                <div class="row1">
+                        <div class="col-md-6 col-md-offset-3">
+            <%= form_for(@employee, url: employee_update_url(:id => @employee.id), method: :patch) do |f| %>
+                <div class="c">
+                    <div class="grid formgroup">
+                        <div>
+                            <%= f.label :id %>
+                                :</div>
+                        <div>
+                            <%= f.text_field :id, :value => ("RP_#{@employee.id}"), :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :name %>
+                                :</div>
+                        <div>
+                            <%= f.text_field :name, :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :gender %>
+                                :</div>
+                        <div>
+                            <%= f.text_field :gender, :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :designation %>
+                                :</div>
+                        <div>
+                            <%= f.text_field :designation, :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :phone %>
+                                <sup>*</sup>:</div>
+                        <div>
+                            <%= f.text_field :phone %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :email %>
+                                :</div>
+                        <div>
+                            <%= f.email_field :email, :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :personal_email %>
+                                <sup>*</sup>:</div>
+                        <div>
+                            <%= f.email_field :personal_email %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :date_of_join %>
+                                :</div>
+                        <div>
+                            <%= f.date_field :date_of_join, :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :date_of_birth %>
+                                :</div>
+                        <div>
+                            <%= f.date_field :date_of_birth, :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :address %>
+                                <sup>*</sup>:</div>
+                        <div>
+                            <%= f.text_area :address %>
+                                <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :active %>
+                                :</div>
+                        <div>
+                            <%= f.check_box :active, :disabled => true %>
+                        </div>
+                        <div>
+                            <%= f.label :username %>
+                                :</div>
+                        <div>
+                            <%= f.text_field :username, :disabled => true %>
+                                <span class="underline"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div>
+                        <%= f.submit "Update", class: "btn btn-primary btn-lg col-sm-12 col-xs-12" %>
+                        <br><br><br><%= link_to "Cancel", employee_dashboard_url, class: "btn btn-lg btn-primary cnl" %>
+                    </div>
+                </div>
+                        </div>
+                <% end %>
+        </div>
+    </div>

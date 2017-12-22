@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'jquery'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -35,6 +35,12 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'font-awesome-sass' 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
+gem 'fog-aws',                 '2.0.0'
+gem 'nokogiri',                '1.8.1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

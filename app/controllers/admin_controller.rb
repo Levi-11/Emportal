@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
   def dashboard
     redirect_to root_url unless logged_in?
+    @admin = current_user
   end
 
   def show

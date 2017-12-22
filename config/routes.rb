@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'employee/dashboard'
+  patch 'employee/update'
 
   get 'employee/details'
 

@@ -6,6 +6,7 @@
 <li><%= link_to "Projects",admin_project_url  %></li>
 <li class = "logout"><%= link_to "Log out", logout_path, method: :delete %></li>
 </ul>
+Welcome <%= @admin.username.upcase %>
 <% else %>
 <%= link_to "Wrong Signup, click here to go to Home", root_url %>
 <% end %>
