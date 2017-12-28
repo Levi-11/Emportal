@@ -15,6 +15,8 @@ class Employee < ApplicationRecord
     validates :address, presence: true
     has_secure_password
     validates :password, presence: true, length: {minimum: 5, maximum: 15}, allow_nil: true
+    mount_uploader :picture, PictureUploader
+    
 
     def Employee.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

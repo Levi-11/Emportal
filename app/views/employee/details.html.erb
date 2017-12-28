@@ -14,6 +14,9 @@
                         <div class="col-md-6 col-md-offset-3">
             <%= form_for(@employee, url: employee_update_url(:id => @employee.id), method: :patch) do |f| %>
                 <div class="c">
+                        <% if f.object.picture? %>
+                        <%= image_tag @employee.picture.thumb.url %>
+                        <% end %>
                     <div class="grid formgroup">
                         <div>
                             <%= f.label :id %>
@@ -21,6 +24,10 @@
                         <div>
                             <%= f.text_field :id, :value => ("RP_#{@employee.id}"), :disabled => true %>
                                 <span class="underline"></span>
+                        </div>
+                        <div>
+                            <%= f.label :picture %>
+                        <%= f.file_field :picture %>
                         </div>
                         <div>
                             <%= f.label :name %>

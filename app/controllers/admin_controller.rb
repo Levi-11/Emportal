@@ -29,6 +29,7 @@ class AdminController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
+ 
     if @employee.save
       redirect_to admin_employee_details_url(:id => @employee.id)
     else

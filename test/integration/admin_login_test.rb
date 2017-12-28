@@ -22,7 +22,7 @@ class AdminLoginTest < ActionDispatch::IntegrationTest
         assert_redirected_to admin_dashboard_path
         follow_redirect!
         assert_template 'admin/dashboard'
-        assert_select "a[href=?]", admin_dashboard_url, count: 0
+        assert_select "a[href=?]", admin_dashboard_url, count: 1
         assert_select "a[href=?]", logout_path
         # assert_select "a[href=?]", user_path(@user)
         delete logout_path

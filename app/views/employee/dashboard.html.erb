@@ -20,6 +20,11 @@
 <div><h4 class = "text-right">Address</h4></div>
 <div><h4 class = "text-left"><%= @employee.address.split(', ').join("<br>").html_safe %></h4></div>
 </div>
+<span class="content">
+        <% if @employee.picture? %>
+        <%= image_tag @employee.picture.thumb.url%>
+        <% end %>
+</span>
 </div>
 <% else %>
 <%= link_to "Wrong Signup, click here to go to Home", root_url %>
